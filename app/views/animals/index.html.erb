@@ -1,5 +1,7 @@
 <div class="banner" style="background-image: url('<%= image_path 'wexor.jpg' %>'); object-fit: cover;">
   <div class="banner-content">
+    <br>
+    <br>
     <h1>Choose your pet</h1>
     <p>Meet your new best friends</p>
     <%= link_to "Add an animal", new_animal_path, class: "btn btn-primary btn-lg" %>
@@ -10,7 +12,7 @@
     <% @animals.each do |animal| %>
       <div class="col-12 col-md-6 col-lg-3">
         <% if animal.photo? %>
-          <% background_url = cl_image_path cocktail.photo, width: 400, height: 500, crop: :fill %>
+          <% background_url = cl_image_path animal.photo, width: 400, height: 500, crop: :fill %>
         <% else %>
           <% background_url = 'https://source.unsplash.com/500x400/?animals' %>
         <% end %>
