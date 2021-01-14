@@ -4,13 +4,40 @@
     <div class="row">
       <div class="col-md-6 mb-4 mb-md-0">
         <div class="col-12 mb-0">
-          <%= cl_image_tag @animal.photo.key, height: 300, width: 400, crop: :fill %>
+          <% if @animal.photo.attached? %>
+              <%= cl_image_tag @animal.photo.key, height: 300, width: 400, crop: :fill %>
+            <% else %>
+              <img src="https://source.unsplash.com/500x400/?animals">
+            <% end %>
         </div>
       </div>
       <div class="col-md-6 mb-4 mb-md-0">
-        <div class="col-12 mb-0">
-          <%= cl_image_tag @animal.photo.key, height: 300, width: 400, crop: :fill %>
-        </div>
+        <div class="table-responsive">
+        <table class="table table-sm table-borderless mb-0">
+          <tbody>
+            <tr>
+              <th class="pl-0 w-25" scope="row"><strong>Description</strong></th>
+              <td><%= @animal.description %></td>
+            </tr>
+            <tr>
+              <th class="pl-0 w-25" scope="row"><strong>Animal</strong></th>
+              <td><%= @animal.animal_type %></td>
+            </tr>
+            <tr>
+              <th class="pl-0 w-25" scope="row"><strong>Start Date</strong></th>
+              <td><%= @animal.start_date %></td>
+            </tr>
+            <tr>
+              <th class="pl-0 w-25" scope="row"><strong>End Date</strong></th>
+              <td><%= @animal.end_date %></td>
+            </tr>
+            <tr>
+              <th class="pl-0 w-25" scope="row"><strong>Address</strong></th>
+              <td><%= @animal.address %></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       </div>
     </div>
   </div>
