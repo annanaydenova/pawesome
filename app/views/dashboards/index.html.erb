@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <h1>All the info you need in one place 🦌</h1>
+
+      <ul class="list-inline tabs-underlined">
+        <li>
+          <a href="dashboard" class="tab-underlined active">Your infos</a>
+        </li>
+        <li>
+          <a href="dashboard/animals" class="tab-underlined">Your animals plan</a>
+        </li>
+        <li>
+          <a href="dashboard/bookings" class="tab-underlined">Bookings</a>
+        </li>
+      </ul>
+
+    <h2>Your first name</h2>
+    <%= current_user.first_name%>
+    <h2>Your last name</h2>
+    <%= current_user.last_name%>
+    <h2>Your location</h2>
+    <%= current_user.city%>
+    <h2>Your bio</h2>
+    <%= current_user.about%>
+    <h2>What you're looking for on Pawesome</h2>
+    <%= current_user.user_type%>
+    <h2>Your email address</h2>
+    <%= current_user.email%>
+    <h2>Number of offers</h2>
+    <%= current_user.animals.count%>
+
+    </div>
+  </div>
+</div>
