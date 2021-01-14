@@ -18,7 +18,7 @@
         <% end %>
         <div class="card" style="background-image: url('<%= background_url %>');">
           <div class="card-description">
-            <h2><%= animal.name %></h2>
+            <h2><%= link_to animal.name, animal_path(animal) %></h2>
           </div>
 
         </div>
