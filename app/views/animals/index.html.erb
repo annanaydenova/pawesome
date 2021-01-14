@@ -11,7 +11,7 @@
   <div class="row">
     <% @animals.each do |animal| %>
       <div class="col-12 col-md-6 col-lg-3">
-        <% if animal.photo? %>
+        <% if animal.photo.attached? %>
           <% background_url = cl_image_path animal.photo, width: 400, height: 500, crop: :fill %>
         <% else %>
           <% background_url = 'https://source.unsplash.com/500x400/?animals' %>
