@@ -4,3 +4,15 @@
   right: 16px;
   z-index: 1000;
 }
+
+.alert {
+  margin: 0;
+  text-align: center;
+  color: white;
+}
+.alert-info {
+  background: $green;
+}
+.alert-warning {
+  background: $red;
+}
