@@ -1,4 +1,6 @@
 class AnimalsController < ApplicationController
+  before_action :authenticate_user!, :except => [:index]
+
   def index
     @animals = Animal.all
   end
