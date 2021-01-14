@@ -1,12 +1,12 @@
 class DashboardsController < ApplicationController
   before_action :authenticate_user!
 
-  def index_offers
-    @animals = current_user.animals
+  def index
   end
 
-  def index_bookings
-    @animals = current_user.animals.bookings
+  def animals
   end
 
+  def bookings
+  end
 end
