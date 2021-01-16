@@ -23,22 +23,22 @@
                 <th class="pl-0 w-25" scope="row"><strong>Animal</strong></th>
                 <td><%= @animal.animal_type %></td>
               </tr>
-              <tr>
+<!--               <tr>
                 <th class="pl-0 w-25" scope="row"><strong>Start Date</strong></th>
                 <td><%= @animal.start_date %></td>
               </tr>
               <tr>
                 <th class="pl-0 w-25" scope="row"><strong>End Date</strong></th>
                 <td><%= @animal.end_date %></td>
-              </tr>
+              </tr> -->
               <tr>
                 <th class="pl-0 w-25" scope="row"><strong>Address</strong></th>
                 <td><%= @animal.address %></td>
-              </tr>
-            </tbody>
+              </tr
+>            </tbody>
         </table>
       </div>
-      <%= link_to "Book your buddy", new_animal_path, class: "btn btn-primary btn-lg" %>
+      <%= link_to "Book your buddy", new_animal_booking_path(@animal), class: "btn btn-primary btn-lg" %>
       <i class="fas fa-plus"></i><%= link_to "Back to home page", root_path %>
       </div>
     </div>
