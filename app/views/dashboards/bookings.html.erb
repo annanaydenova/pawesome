@@ -18,9 +18,14 @@
   </div>
 
 
-<div class="row">
-  <div class="col-lg info-cards">
-    <h3 class='m-4 title-info'>Booking from for </h3>
-    <h3 class="m-4"><%= current_user.first_name%></h3>
+<% current_user.animals.each do |animal| %>
+  <div class="row">
+    <div class="col-lg info-cards">
+      <h2> You have a booking for <%= animal.name.capitalize%> made by 
+        <% animal.bookings.each do |booking|%>
+          <%= @user.where(id: booking.user_id %>
+        <% end %>
+    </div>
   </div>
-</div>
+<% end %>
+

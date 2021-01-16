@@ -5,7 +5,7 @@
 
       <ul class="list-inline tabs-underlined">
         <li>
-          <a href="/dashboard" class="tab-underlined">Your infos</a>
+          <a href="/dashboard" class="tab-underlined ">Your infos</a>
         </li>
         <li>
           <a href="/dashboard/animals" class="tab-underlined active">Your animals plan</a>
@@ -19,7 +19,7 @@
 
 
 <div class="container">
-  <div class="row row d-flex justify-content-center m-5">
+  <div class="row d-flex justify-content-center m-5">
     <% current_user.animals.each do |animal| %>
       <div class="col-12 col-md-6 col-lg-3">
         <% if animal.photo.attached? %>
@@ -31,7 +31,6 @@
           <div class="card-description">
             <h2><%= link_to animal.name, animal_path(animal) %></h2>
           </div>
-
         </div>
       </div>
     <% end %>

@@ -15,6 +15,15 @@
     border: 1px solid rgb(230,230,230);
 }
 
+.info-cards {
+  margin : 12px;
+  border-radius: 3px;
+  box-shadow: 0 0 5px rgb(230,230,230);
+  text-align: center;
+  padding: 20px;
+  border: 1px solid rgb(230,230,230);
+}
+
 .info-cards:hover{
     animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
     transform: translate3d(0, 0, 0)
@@ -38,3 +47,22 @@
     }
   }
 
+.booking-card {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+}
+
+.booking-card img {
+  height: 100%;
+  width: 60px;
+  object-fit: cover;
+}
+
+
+.booking-card-infos {
+  padidng : 16px;
+}
