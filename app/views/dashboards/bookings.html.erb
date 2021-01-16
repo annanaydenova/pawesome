@@ -3,18 +3,29 @@
     <div class="col-md-8">
       <h1>All the info you need in one place 🦌</h1>
 
-        <ul class="list-inline tabs-underlined">
+      <ul class="list-inline tabs-underlined">
         <li>
-          <a href="/dashboard" class="tab-underlined ">Your infos</a>
+          <a href="/dashboard" class="tab-underlined">Your infos</a>
         </li>
         <li>
-          <a href="animals" class="tab-underlined ">Your animals plan</a>
+          <a href="/dashboard/animals" class="tab-underlined ">Your animals plan</a>
         </li>
         <li>
-          <a href="bookings" class="tab-underlined active">Bookings</a>
+          <a href="/dashboard/bookings" class="tab-underlined active">Bookings</a>
         </li>
       </ul>
-
     </div>
   </div>
-</div>
+
+
+<% current_user.animals.each do |animal| %>
+  <div class="row">
+    <div class="col-lg info-cards">
+      <h2> You have a booking for <%= animal.name.capitalize%> made by 
+        <% animal.bookings.each do |booking|%>
+          <%= booking.user_id %>
+        <% end %>
+    </div>
+  </div>
+<% end %>
+
