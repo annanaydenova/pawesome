@@ -1,10 +1,12 @@
-<div class="banner" style="background-image: url('<%= image_path 'wexor.jpg' %>'); object-fit: cover;">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('<%= image_path 'puppies.jpg' %>'); object-fit: cover;">
   <div class="banner-content">
     <br>
     <br>
-    <h1>Choose your pet</h1>
-    <p>Meet your new best friends</p>
-    <%= link_to "Add an animal", new_animal_path, class: "btn btn-primary btn-lg" %>
+    <h1>Be Pawesome</h1>
+      <p>
+        Join thousands of happy <span id="banner-typed-text"></span>friends
+      </p>
+    <%= link_to "Share your pet", new_animal_path, class: "btn btn-flat" %>
   </div>
 </div>
 <div class="container">
@@ -16,12 +18,13 @@
         <% else %>
          <!--  <% background_url = 'https://source.unsplash.com/500x400/?animal' %> -->
         <% end %>
-        <div class="card" style="background-image: url('<%= background_url %>');">
-          <div class="card-description">
-            <h2><%= link_to animal.name, animal_path(animal) %></h2>
+        <%= link_to animal_path(animal) do %>
+          <div class="card" style="background-image: url('<%= background_url %>');">
+            <div class="card-description">
+              <h2 class="animal-name"><%= animal.name.capitalize %></h2>
+            </div>
           </div>
-
-        </div>
+        <% end %>
       </div>
     <% end %>
   </div>
