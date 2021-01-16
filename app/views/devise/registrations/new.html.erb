@@ -3,7 +3,7 @@
   <div class="row justify-content-center">
     <div class="col-md-8">
 
-      <h2 class="text-center m-2 mb-4">First, let's talk about you !</h2>
+      <h2 class="text-center m-4">First, let's talk about you !</h2>
 
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
@@ -45,15 +45,22 @@
                         input_html: { autocomplete: "new-password" } %>
           </div>
         </div>
+      </div>
+
+      <div class="container text-center">
+        <div class="form-actions">
+          <div class="btn btn-flat">
           <div class="form-actions">
             <%= f.button :submit, "Wouf wouf" %>
-          </div>
+          </div> 
         <%end %>
         </div>
+      </div>
+
            
       <div class="m-4">     
-      <%= render "devise/shared/links" %>
-    </div>
+        <%= render "devise/shared/links" %>
+      </div>
     </div>
   </div>
 </div>
