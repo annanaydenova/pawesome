@@ -1,0 +1,8 @@
+<h1>Edit animal</h1>
+
+<%= render 'form', animal: @animal %>
+
+<hr>
+<%= link_to animals_path do %>
+  <i class="fa fa-history"></i><%= link_to "Back to home page", root_path %>
+<% end %>
