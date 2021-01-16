@@ -38,8 +38,14 @@
 >            </tbody>
         </table>
       </div>
+      <%= link_to edit_animal_path(@animal.id), class: 'pull-right btn btn-default' do %>
+        <i class="fa fa-pencil"></i> Edit this animal
+      <% end %>
+      <%= link_to animal_path(@animal.id), method: :delete, data: { confirm: "Are you sure?" }, class: 'pull-right btn btn-default' do %>
+        <i class="fa fa-pencil"></i> Delete this animal
+      <% end %>
       <%= link_to "Book your buddy", new_animal_booking_path(@animal), class: "btn btn-primary btn-lg" %>
-      <i class="fas fa-plus"></i><%= link_to "Back to home page", root_path %>
+        <i class="fas fa-plus"></i><%= link_to "Back to home page", root_path %>
       </div>
     </div>
   </div>

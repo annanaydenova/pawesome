@@ -1,0 +1,10 @@
+ <%= simple_form_for @animal do |f| %>
+          <%= f.input :name, label: 'The name of your offer', required: true %>
+          <%= f.input :photo, as: :file, label: 'Upload a cool photo', required: true %>
+          <%= f.input :description, required: true %>
+          <%= f.input :animal_type, required: true %>
+          <%= f.input :address, required: true %>
+          <%= f.input :start_date, required: true, order: [:day, :month, :year] %>
+          <%= f.input :end_date, required: true, order: [:day, :month, :year] %>
+          <%= f.submit %>
+        <% end %>
