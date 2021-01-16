@@ -16,12 +16,13 @@
         <% else %>
          <!--  <% background_url = 'https://source.unsplash.com/500x400/?animal' %> -->
         <% end %>
-        <div class="card" style="background-image: url('<%= background_url %>');">
-          <div class="card-description">
-            <h2><%= link_to animal.name, animal_path(animal) %></h2>
+        <%= link_to animal_path(animal) do %>
+          <div class="card" style="background-image: url('<%= background_url %>');">
+            <div class="card-description">
+              <h2 class="animal-name"><%= animal.name.capitalize %></h2>
+            </div>
           </div>
-
-        </div>
+        <% end %>
       </div>
     <% end %>
   </div>

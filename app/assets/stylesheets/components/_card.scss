@@ -1,3 +1,7 @@
+.col-12 {
+  margin-bottom: 20px;
+}
+
 .card {
   height: 175px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
@@ -5,14 +9,23 @@
   background-position: center;
   color: white;
   position: relative;
+  &:hover {
+    box-shadow: 7px 6px 7px rgba(0, 0, 0, 0.3);
+  }
 }
 .card-description {
   position: absolute;
-  bottom: 10px;
-  left: 10px;
+  bottom: -1px;
+  background-color: rgba(255, 255, 255, 0.8);
+  height: 40px;
+  width: -webkit-fill-available;
 }
-.card-description h2 {
+.card-description .animal-name {
   font-size: 24px;
+  color: black;
+  bottom: -1px;
+  left: 13px;
+  position: absolute;
 }
 .card-link {
   position: absolute;
