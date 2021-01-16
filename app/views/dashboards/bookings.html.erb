@@ -3,18 +3,24 @@
     <div class="col-md-8">
       <h1>All the info you need in one place 🦌</h1>
 
-        <ul class="list-inline tabs-underlined">
+      <ul class="list-inline tabs-underlined">
         <li>
-          <a href="/dashboard" class="tab-underlined ">Your infos</a>
+          <a href="/dashboard" class="tab-underlined">Your infos</a>
         </li>
         <li>
-          <a href="animals" class="tab-underlined ">Your animals plan</a>
+          <a href="/dashboard/animals" class="tab-underlined ">Your animals plan</a>
         </li>
         <li>
-          <a href="bookings" class="tab-underlined active">Bookings</a>
+          <a href="/dashboard/bookings" class="tab-underlined active">Bookings</a>
         </li>
       </ul>
-
     </div>
+  </div>
+
+
+<div class="row">
+  <div class="col-lg info-cards">
+    <h3 class='m-4 title-info'>Booking from for </h3>
+    <h3 class="m-4"><%= current_user.first_name%></h3>
   </div>
 </div>
