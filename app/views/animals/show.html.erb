@@ -13,31 +13,33 @@
       </div>
       <div class="col-md-6 mb-4 mb-md-0">
         <div class="table-responsive">
-        <table class="table table-sm table-borderless mb-0">
-          <tbody>
-            <tr>
-              <th class="pl-0 w-25" scope="row"><strong>Description</strong></th>
-              <td><%= @animal.description %></td>
-            </tr>
-            <tr>
-              <th class="pl-0 w-25" scope="row"><strong>Animal</strong></th>
-              <td><%= @animal.animal_type %></td>
-            </tr>
-            <tr>
-              <th class="pl-0 w-25" scope="row"><strong>Start Date</strong></th>
-              <td><%= @animal.start_date %></td>
-            </tr>
-            <tr>
-              <th class="pl-0 w-25" scope="row"><strong>End Date</strong></th>
-              <td><%= @animal.end_date %></td>
-            </tr>
-            <tr>
-              <th class="pl-0 w-25" scope="row"><strong>Address</strong></th>
-              <td><%= @animal.address %></td>
-            </tr>
-          </tbody>
+          <table class="table table-sm table-borderless mb-0">
+            <tbody>
+              <tr>
+                <th class="pl-0 w-25" scope="row"><strong>Description</strong></th>
+                <td><%= @animal.description %></td>
+              </tr>
+              <tr>
+                <th class="pl-0 w-25" scope="row"><strong>Animal</strong></th>
+                <td><%= @animal.animal_type %></td>
+              </tr>
+              <tr>
+                <th class="pl-0 w-25" scope="row"><strong>Start Date</strong></th>
+                <td><%= @animal.start_date %></td>
+              </tr>
+              <tr>
+                <th class="pl-0 w-25" scope="row"><strong>End Date</strong></th>
+                <td><%= @animal.end_date %></td>
+              </tr>
+              <tr>
+                <th class="pl-0 w-25" scope="row"><strong>Address</strong></th>
+                <td><%= @animal.address %></td>
+              </tr>
+            </tbody>
         </table>
       </div>
+      <%= link_to "Book your buddy", new_animal_path, class: "btn btn-primary btn-lg" %>
+      <i class="fas fa-plus"></i><%= link_to "Back to home page", root_path %>
       </div>
     </div>
   </div>
