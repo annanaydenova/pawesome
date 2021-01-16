@@ -3,18 +3,38 @@
     <div class="col-md-8">
       <h1>All the info you need in one place 🦌</h1>
 
-         <ul class="list-inline tabs-underlined">
+      <ul class="list-inline tabs-underlined">
         <li>
           <a href="/dashboard" class="tab-underlined ">Your infos</a>
         </li>
         <li>
-          <a href="animals" class="tab-underlined active">Your animals plan</a>
+          <a href="/dashboard/animals" class="tab-underlined active">Your animals plan</a>
         </li>
         <li>
-          <a href="bookings" class="tab-underlined ">Bookings</a>
+          <a href="/dashboard/bookings" class="tab-underlined">Bookings</a>
         </li>
       </ul>
-
     </div>
   </div>
+
+
+<div class="container">
+  <div class="row row d-flex justify-content-center m-5">
+    <% current_user.animals.each do |animal| %>
+      <div class="col-12 col-md-6 col-lg-3">
+        <% if animal.photo.attached? %>
+          <% background_url = cl_image_path animal.photo.key, width: 400, height: 500, crop: :fill %>
+        <% else %>
+          <% background_url = 'https://source.unsplash.com/500x400/?animal' %>
+        <% end %>
+        <div class="card" style="background-image: url('<%= background_url %>');">
+          <div class="card-description">
+            <h2><%= link_to animal.name, animal_path(animal) %></h2>
+          </div>
+
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
+

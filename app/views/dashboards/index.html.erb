@@ -14,22 +14,57 @@
           <a href="dashboard/bookings" class="tab-underlined">Bookings</a>
         </li>
       </ul>
+    </div>
+  </div>
+  <div class="row">
 
-    <h2>Your first name</h2>
-    <%= current_user.first_name%>
-    <h2>Your last name</h2>
-    <%= current_user.last_name%>
-    <h2>Your location</h2>
-    <%= current_user.city%>
-    <h2>Your bio</h2>
-    <%= current_user.about%>
-    <h2>What you're looking for on Pawesome</h2>
-    <%= current_user.user_type%>
-    <h2>Your email address</h2>
-    <%= current_user.email%>
-    <h2>Number of offers</h2>
-    <%= current_user.animals.count%>
+    <div class="col-lg info-cards">
+      <h3 class='m-4 title-info'>Your first name</h3>
+      <h3 class="m-4"><%= current_user.first_name%></h3>
+    </div>
 
+    <div class="col-lg info-cards">
+      <h3 class='m-4 title-info'>Your last name</h3>
+      <h3 class="m-4"><%= current_user.last_name%></h3>
+    </div>
+
+    <div class="col-lg info-cards">
+      <h3 class='m-4 title-info'>Your Location</h3>
+      <h3 class="m-4"><%= current_user.city%></h3>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg info-cards">
+      <h3 class='m-4 title-info'>Your bio</h3>
+      <h3 class="m-4"><%= current_user.about%></h3>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg info-cards">
+      <h3 class='m-4 title-info'>What you're looking for on Pawesome</h3>
+      <h3 class="m-4"><%= current_user.user_type%></h3>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg info-cards">
+      <h3 class='m-4 title-info'>Your email address</h3>
+      <h3 class="m-4"><%= current_user.email%></h3>
+    </div>
+
+    <div class="col-lg info-cards">
+      <h3 class='m-4 title-info'>Number of offers</h3>
+      <h3 class="m-4"><%= current_user.animals.count%></h3>
+    </div>
+  </div>   
+
+  <div class="row">
+    <div class="col-lg info-cards">
+      <%= link_to "Edit my Profile", edit_user_registration_path, class: "btn btn-primary btn-lg" %> 
     </div>
   </div>
 </div>
+
+
