@@ -23,7 +23,7 @@
     <div class="col-lg info-cards">
       <h2> You have a booking for <%= animal.name.capitalize%> made by 
         <% animal.bookings.each do |booking|%>
-          <%= @user.where(id: booking.user_id %>
+          <%= booking.user_id %>
         <% end %>
     </div>
   </div>
