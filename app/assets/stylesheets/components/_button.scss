@@ -1,12 +1,12 @@
 .btn-flat {
-  color: pink;
+  color: white;
   padding: 8px 24px;
   border-radius: 4px;
-  background: white;
+  background: pink;
   transition: background 0.3s ease;
 }
 
 .btn-flat:hover {
-  background: pink;
-  color: white;
+  background: white;
+  color: pink;
 }

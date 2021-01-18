@@ -35,6 +35,7 @@ gem 'devise'
 gem 'omniauth'
 gem 'cloudinary', '~> 1.16.0'
 gem 'faker'
+gem 'searchkick', '~> 4.0'
 
 group :development, :test do
   gem 'pry-byebug'
