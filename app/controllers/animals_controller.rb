@@ -3,8 +3,13 @@ class AnimalsController < ApplicationController
   before_action :set_animal, only: [ :show, :edit, :update, :destroy ]
 
   def index
-    @animals = Animal.all
+    if params[:query].present?
+      @animals = Animal.where("animal_type ILIKE ?", "%#{params[:query]}%")
+    else
+      @animals = Animal.all
+    end
   end
+
 
   def show
     # @animal = Animal.find(params[:id])
