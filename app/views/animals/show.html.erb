@@ -1,42 +1,51 @@
-<div class="paws-wallpaper">
-
-  <section class="mb-5">
-    <div class="container background-white">
-      <h1 style= "text-align: center;">Meet <%= @animal.name %> your future buddy</h1>
-      <div class="display-flex-center">
+<!-- <div class="paws-wallpaper"> -->
+  <div class="show-container">
+    <div class="show-container-left">
+      <div class="show-title">
+        <h1>Meet <%= @animal.name %>, your future buddy</h1>
+      </div>
+      <div class="animal-content">
         <% if @animal.photo.attached? %>
-          <%= cl_image_tag @animal.photo.key, height: 300, width: 400, crop: :fill %>
+          <%= cl_image_tag @animal.photo.key, height: 300, width: 400, crop: :fill, :radius=>5 %>
         <% else %>
           <img src="https://source.unsplash.com/500x400/?animals">
         <% end %>
       </div>
-        <div class="table-responsive display-flex-center">
-          <div class="animal-description" >
-            <p><strong>Description</strong></p>
-            <p><%= @animal.description %></p>
-          </div>
-          <div class="animal-type">
-            <p><strong>Animal</strong></p>
-            <p><%= @animal.animal_type %></p>
-          </div>
-          <div class="animal-address">
-            <p><strong>Address</strong></p>
-            <p><%= @animal.address %></p>
-          </div>
-          <div>
-            <%= link_to "Book your buddy", new_animal_booking_path(@animal), class: "btn btn-flat" %>
-            <br>
-            <div class="animal-actions">
-              <%= link_to edit_animal_path(@animal.id), class: 'btn btn-default' do %>
-                <i class="fas fa-edit"></i>
-              <% end %>
-              <%= link_to animal_path(@animal.id), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-default' do %>
-                <i class="fas fa-trash-alt"></i>
-              <% end %>
-            </div>
-          </div>
-        </div>
+      <div class="animal-description" >
+        <p><strong>Description</strong></p>
+        <p><%= @animal.description %></p>
       </div>
+      <div class="animal-description">
+        <p><strong>Animal</strong></p>
+        <p><%= @animal.animal_type %></p>
+      </div>
+      <div class="animal-description">
+        <p><strong>Address</strong></p>
+        <p><%= @animal.address %></p>
+      </div>
+    <div>
+      <%= link_to "Book your buddy", new_animal_booking_path(@animal), class: "btn btn-show" %>
     </div>
-  </section>
-</div>
+    <div class="animal-actions">
+      <%= link_to edit_animal_path(@animal.id), class: 'btn btn-default' do %>
+      <i class="fas fa-edit"></i>
+     <% end %>
+     <%= link_to animal_path(@animal.id), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-default' do %>
+     <i class="fas fa-trash-alt"></i>
+     <% end %>
+    </div>
+    </div>
+    <div id="map"
+      style="width: 100%; height: 600px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
+  </div>
+<!-- </div> -->
+
+
+
+
+
+
