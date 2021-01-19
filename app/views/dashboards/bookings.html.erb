@@ -27,14 +27,15 @@
           <% if current_user.id == booking.user.id %>
             <h4> You have received a booking for <strong class="title-info"><%= animal.name.capitalize%></strong> made by <strong class="title-info"><%= booking.user.first_name  %></strong> </h4>      
             <p><span class="badge-pill badge-primary">Received</span></p>
-            <p> From :<%= booking.start_date %></p>
-            <p> To : <%= booking.end_date %></p>
+            <p><span class="badge-pill badge-warning">Pending</span></p>
+            <p><strong> Dates : </strong> <%= booking.start_date %> 👉 <%= booking.end_date %></p>
           <%else %>
             <h4> You have made a booking for <strong class="title-info"><%= booking.animal.name%>,</strong> a lovely <%= animal.animal_type %> owned by <strong class="title-info"><%= animal.user.first_name %></strong> </h4>      
-            <p><span class="badge-pill badge-success">Made</span></p>
-            <p> From :<%= booking.start_date %></p>
-            <p> To : <%= booking.end_date %></p>
+            <p><span class="badge-pill badge-info">Made</span></p>
+            <p><span class="badge-pill badge-success">Accepted</span></p>
+            <p><strong> Dates : </strong> <%= booking.start_date %> 👉 <%= booking.end_date %></p>
           <% end %>
+        <% %>
         </div>
       </div>
     <% end %>
