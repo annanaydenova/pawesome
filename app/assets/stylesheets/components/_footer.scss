@@ -1,5 +1,5 @@
 .footer {
-  background: #F4F4F4;
+  background: rgb(224, 217, 217);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -23,8 +23,4 @@
 }
 .footer .fa-heart {
   color: #D23333;
-}
-
-.main {
-  min-height: calc(100vh - 60px); // if your footer height is 60px
 }
