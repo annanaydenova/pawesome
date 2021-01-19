@@ -1,5 +1,6 @@
 class DashboardsController < ApplicationController
   before_action :authenticate_user!
+  
 
   def index
   end
@@ -8,5 +9,7 @@ class DashboardsController < ApplicationController
   end
 
   def bookings
+    @booking = Booking.all
+    @user = User.all
   end
 end
