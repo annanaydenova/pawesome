@@ -6,6 +6,8 @@
 }
 
 .tabs-underlined .tab-underlined {
+  display: flex;
+  align-items: center;
   color: black;
   padding: 8px;
   margin: 8px 16px;
