@@ -28,10 +28,10 @@
             <br>
             <div class="animal-actions">
               <%= link_to edit_animal_path(@animal.id), class: 'btn btn-default' do %>
-                <i class="fas fa-edit"></i>
+                <i class="fas fa-edit" style="font-size: 20px"></i>
               <% end %>
               <%= link_to animal_path(@animal.id), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-default' do %>
-                <i class="fas fa-trash-alt"></i>
+                <i class="fas fa-trash-alt" style="font-size: 20px"></i>
               <% end %>
             </div>
           </div>

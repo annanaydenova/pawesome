@@ -2,7 +2,7 @@
           <%= f.input :name, label: 'Your pets name', required: true %>
           <%= f.input :photo, as: :file, hint: 'Upload a cool photo', required: true %>
           <%= f.input :description, hint: 'Describe your pet, add a funny story', required: true %>
-          <%= f.input :animal_type, collection: ['Doggo', 'Kitty', 'Bird', 'Fish', 'Hamster', 'Rabbit', 'Dragon', 'Turtle', 'Butterfly', 'Tiger', 'Zebra', 'Parrot'], required: true %>
+          <%= f.input :animal_type, collection: ['Doggo', 'Kitty', 'Bird', 'Fish', 'Hamster', 'Rabbit', 'Dragon', 'Turtle', 'Butterfly', 'Lion', 'Zebra', 'Parrot'], required: true %>
           <%= f.input :address, hint: 'Add your address here', required: true %>
           <%= f.submit %>
         <% end %>

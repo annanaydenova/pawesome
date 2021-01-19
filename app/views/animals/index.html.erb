@@ -10,25 +10,24 @@
   </div>
 </div>
 
-  <div class="container search align-top">
-     <div class="col-sm-8">
+  <div class="container-equal-margin mb-5">
       <%= form_tag animals_path, method: :get do %>
-      <%= text_field_tag :query,
+      <div class="d-flex align-items-center">
+        <%= text_field_tag :query,
         params[:query],
-        class: "form-control",
+        class: "form-control mr-1",
         placeholder: "Find a pet"
-      %>
-    </div>
-    <div class="col-sm-4">
-      <%= submit_tag "Search", class: "btn btn-flat" %>
+        %>
+        <%= submit_tag "Search", class: "btn btn-flat" %>
+      </div>
+
       <% end %>
-    </div>
   </div>
 
-  <div class="container">
+  <div class="container-equal-margin">
     <div class="row align-items justify-content-center">
       <% @animals.each do |animal| %>
-      <div class="col-12 col-md-6 col-lg-3 m-2">
+      <div class="col-12 col-md-6 col-lg-4">
         <% if animal.photo.attached? %>
           <% background_url = cl_image_path animal.photo.key, width: 400, height: 500, crop: :fill %>
         <% else %>
