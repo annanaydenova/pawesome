@@ -24,7 +24,7 @@
             <p><%= @animal.address %></p>
           </div>
           <div>
-            <%= link_to "Book your buddy", new_animal_booking_path(@animal), class: "btn btn-primary btn-lg" %>
+            <%= link_to "Book your buddy", new_animal_booking_path(@animal), class: "btn-show" %>
             <br>
             <div class="animal-actions">
               <%= link_to edit_animal_path(@animal.id), class: 'btn btn-default' do %>
