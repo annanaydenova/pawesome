@@ -1,31 +1,42 @@
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-md-8">
-      <h1>All the info you need in one place 🦌</h1>
+      <h2 class ="mt-4">All the info you need in one place 🦌</h2>
+  </div>
 
-      <ul class="list-inline tabs-underlined">
-        <li>
-          <a href="/dashboard" class="tab-underlined">Your infos</a>
-        </li>
-        <li>
-          <a href="/dashboard/animals" class="tab-underlined ">Your animals plan</a>
-        </li>
-        <li>
-          <a href="/dashboard/bookings" class="tab-underlined active">Bookings</a>
-        </li>
-      </ul>
-    </div>
+  <div class="row justify-content-center">
+    <ul class="list-inline tabs-underlined">
+      <li>
+        <a href="/dashboard" class="tab-underlined">Your infos</a>
+      </li>
+      <li>
+        <a href="/dashboard/animals" class="tab-underlined ">My animals</a>
+      </li>
+      <li>
+        <a href="/dashboard/bookings" class="tab-underlined active">Bookings</a>
+      </li>
+    </ul>
   </div>
 </div>
 
-<% current_user.animals.each do |animal| %>
-  <div class="row">
-    <div class="col-lg info-cards">
-      <h2> You have a booking for <%= animal.name.capitalize%> made by 
-        <% animal.bookings.each do |booking|%>
-          <%= booking.user_id %>
-        <% end %>
-    </div>
-  </div>
-<% end %>
 
+<div class="container mt-4 mb-4">
+  <% current_user.animals.each do |animal| %>
+    <% animal.bookings.each do |booking|%>
+      <div class="row">
+        <div class="col-lg info-cards p-1 m-3">
+          <% if current_user.id == booking.user.id %>
+            <h4> You have received a booking for <strong class="title-info"><%= animal.name.capitalize%></strong> made by <strong class="title-info"><%= booking.user.first_name  %></strong> </h4>      
+            <p><span class="badge-pill badge-primary">Received</span></p>
+            <p> From :<%= booking.start_date %></p>
+            <p> To : <%= booking.end_date %></p>
+          <%else %>
+            <h4> You have made a booking for <strong class="title-info"><%= booking.animal.name%>,</strong> a lovely <%= animal.animal_type %> owned by <strong class="title-info"><%= animal.user.first_name %></strong> </h4>      
+            <p><span class="badge-pill badge-success">Made</span></p>
+            <p> From :<%= booking.start_date %></p>
+            <p> To : <%= booking.end_date %></p>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

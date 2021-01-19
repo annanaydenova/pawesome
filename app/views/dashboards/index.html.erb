@@ -1,71 +1,71 @@
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-md-8">
-      <h1>All the info you need in one place 🦌</h1>
-
-      <ul class="list-inline tabs-underlined">
-        <li>
-          <a href="dashboard" class="tab-underlined active">Your infos</a>
-        </li>
-        <li>
-          <a href="dashboard/animals" class="tab-underlined">Your animals plan</a>
-        </li>
-        <li>
-          <a href="dashboard/bookings" class="tab-underlined">Bookings</a>
-        </li>
-      </ul>
-    </div>
+      <h2 class ="mt-4">All the info you need in one place 🦌</h2>
   </div>
 
+  <div class="row justify-content-center">
+    <ul class="list-inline tabs-underlined">
+      <li>
+        <a href="/dashboard" class="tab-underlined active">Your infos</a>
+      </li>
+      <li>
+        <a href="/dashboard/animals" class="tab-underlined ">My animals</a>
+      </li>
+      <li>
+        <a href="/dashboard/bookings" class="tab-underlined">Bookings</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+<div class="container mt-4 mb-4">
   <div class="row">
 
     <div class="col-lg info-cards">
-      <h3 class='m-4 title-info'>Your first name</h3>
-      <h3 class="m-4"><%= current_user.first_name%></h3>
+      <p class='m-1 title-info'>Your first name</p>
+      <p class="m-1"><%= current_user.first_name%></p>
     </div>
 
     <div class="col-lg info-cards">
-      <h3 class='m-4 title-info'>Your last name</h3>
-      <h3 class="m-4"><%= current_user.last_name%></h3>
+      <p class='m-1 title-info'>Your last name</p>
+      <p class="m-1"><%= current_user.last_name%></p>
     </div>
 
     <div class="col-lg info-cards">
-      <h3 class='m-4 title-info'>Your Location</h3>
-      <h3 class="m-4"><%= current_user.city%></h3>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-lg info-cards">
-      <h3 class='m-4 title-info'>Your bio</h3>
-      <h3 class="m-4"><%= current_user.about%></h3>
+      <p class='m-1 title-info'>Your Location</p>
+      <p class="m-1"><%= current_user.city%></p>
     </div>
   </div>
 
   <div class="row">
     <div class="col-lg info-cards">
-      <h3 class='m-4 title-info'>What you're looking for on Pawesome</h3>
-      <h3 class="m-4"><%= current_user.user_type%></h3>
+      <p class='m-1 title-info'>Your bio</p>
+      <p class="m-1"><%= current_user.about%></p>
     </div>
   </div>
 
   <div class="row">
     <div class="col-lg info-cards">
-      <h3 class='m-4 title-info'>Your email address</h3>
-      <h3 class="m-4"><%= current_user.email%></h3>
-    </div>
-
-    <div class="col-lg info-cards">
-      <h3 class='m-4 title-info'>Number of offers</h3>
-      <h3 class="m-4"><%= current_user.animals.count%></h3>
+      <p class='m-1 title-info'>What you're looking for on Pawesome</p>
+      <p class="m-1"><%= current_user.user_type%></p>
     </div>
   </div>
 
   <div class="row">
     <div class="col-lg info-cards">
-      <%= link_to "Edit my Profile", edit_user_registration_path, class: "btn btn-flat" %>
+      <p class='m-1 title-info'>Your email address</p>
+      <p class="m-1"><%= current_user.email%></p>
+    </div>
+
+    <div class="col-lg info-cards">
+      <p class='m-1 title-info'>Number of offers</p>
+      <p class="m-1"><%= current_user.animals.count%></p>
     </div>
   </div>
+
+  <%= link_to "Edit my Profile", edit_user_registration_path, class: "btn btn-flat" %>
+    
 </div>
 
 
