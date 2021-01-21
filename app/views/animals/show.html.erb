@@ -3,10 +3,11 @@
     <div class="show-container-left">
       <div class="show-title">
         <h1>Meet <%= @animal.name %>, your future buddy</h1>
+      <%= link_to "Back to other buddies", animals_path, class: "btn btn-show" %>
       </div>
       <div class="animal-content">
         <% if @animal.photo.attached? %>
-          <%= cl_image_tag @animal.photo.key, height: 300, width: 400, crop: :fill, :radius=>5 %>
+          <%= cl_image_tag @animal.photo.key, height: 500, width: 600, crop: :fill, :radius=>5 %>
         <% else %>
           <img src="https://source.unsplash.com/500x400/?animals">
         <% end %>
@@ -23,9 +24,6 @@
         <p><strong>Address</strong></p>
         <p><%= @animal.address %></p>
       </div>
-    <div>
-      <%= link_to "Book your buddy", new_animal_booking_path(@animal), class: "btn btn-show" %>
-    </div>
     <div class="animal-actions">
       <%= link_to edit_animal_path(@animal.id), class: 'btn btn-default' do %>
       <i class="fas fa-edit"></i>
@@ -35,13 +33,19 @@
      <% end %>
     </div>
     </div>
-    <div id="map"
-      style="width: 100%; height: 600px;"
-      data-markers="<%= @markers.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
-  </div>
-  </div>
+      <div class="animal-calendar">
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <h4>Book <%= @animal.name.capitalize %> here</h4>
+            <%= simple_form_for [@animal, @booking] do |f| %>
+              <%= f.input :start_date, as: :string, required: true, input_html: {class: "datepicker"} %>
+              <%= f.input :end_date, as: :string, required: true, input_html: {class: "datepicker"} %>
+              <%= f.button :submit, "Book your buddy", class: 'btn-flat' %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+</div>
 <!-- </div> -->
 
 
