@@ -1,2 +1,59 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('<%= image_path 'puppies.jpg' %>'); object-fit: cover;">
+  <div class="banner-content">
+    <br>
+    <br>
+    <h1><i class="fas fa-paw"></i> Be Pawesome</h1>
+      <p>
+        Join thousands of happy <span id="banner-typed-text"></span>friends
+      </p>
+      <div class="container-equal-margin mb-5">
+        <%= form_tag animals_path, method: :get do %>
+          <div class="d-flex align-items-center">
+            <%= text_field_tag :query,
+            params[:query],
+            class: "form-control mr-1",
+            placeholder: "Find a pet"
+            %>
+            <%= submit_tag "Search", class: "btn btn-flat" %>
+          </div>
+        <% end %>
+      </div>
+  </div>
+</div>
+
+
+ <div class="container-equal-margin">
+  <div class="row">
+    <div class="col">
+      Lorem ipsum dolor sit amet, consectetur adipisicing, elit. Sed suscipit, nemo corrupti vero quibusdam minima aliquid, blanditiis voluptas ratione cupiditate quia sint distinctio, dolore voluptatum asperiores adipisci fuga odit! Sit!
+    </div>
+    <div class="col">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque voluptas nesciunt veritatis voluptates tempora reiciendis iste aut eos. Asperiores quam totam quasi sed obcaecati, optio, temporibus laborum quidem sequi illo?
+    </div>
+    <div class="col">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi veritatis adipisci voluptates illum dicta hic quam architecto reiciendis delectus tempora non dolor velit asperiores assumenda, id, cumque voluptatibus suscipit ea.
+    </div>
+  </div>
+  <div class="row align-items justify-content-center">
+    <% @animals.each do |animal| %>
+      <div class="col-12 col-md-6 col-lg-4">
+        <% if animal.photo.attached? %>
+          <% background_url = cl_image_path animal.photo.key, width: 400, height: 500, crop: :fill %>
+        <% else %>
+         <!--  <% background_url = 'https://source.unsplash.com/500x400/?animal' %> -->
+        <% end %>
+        <%= link_to animal_path(animal) do %>
+          <div class="card" style="background-image: url('<%= background_url %>');">
+            <div class="card-description">
+              <h2 class="animal-name"><%= animal.name.capitalize %></h2>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+    <div style="margin-bottom: 10px">
+     <%= link_to "Discover all our pets", animals_path, class: "btn btn-flat" %>
+    </div>
+  </div>
+</div>
+
