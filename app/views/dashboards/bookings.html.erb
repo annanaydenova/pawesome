@@ -18,26 +18,56 @@
   </div>
 </div>
 
+<div class="container mt-3">
 
-<div class="container mt-4 mb-4">
-  <% current_user.animals.each do |animal| %>
-    <% animal.bookings.each do |booking|%>
-      <div class="row">
-        <div class="col-lg info-cards p-1 m-3">
-          <% if current_user.id == booking.user.id %>
-            <h4> You have received a booking for <strong class="title-info"><%= animal.name.capitalize%></strong> made by <strong class="title-info"><%= booking.user.first_name  %></strong> </h4>      
-            <p><span class="badge-pill badge-primary">Received</span></p>
-            <p><span class="badge-pill badge-warning">Pending</span></p>
-            <p><strong> Dates : </strong> <%= booking.start_date %> 👉 <%= booking.end_date %></p>
-          <%else %>
-            <h4> You have made a booking for <strong class="title-info"><%= booking.animal.name%>,</strong> a lovely <%= animal.animal_type %> owned by <strong class="title-info"><%= animal.user.first_name %></strong> </h4>      
-            <p><span class="badge-pill badge-info">Made</span></p>
-            <p><span class="badge-pill badge-success">Accepted</span></p>
-            <p><strong> Dates : </strong> <%= booking.start_date %> 👉 <%= booking.end_date %></p>
-          <% end %>
-        <% %>
-        </div>
+  <div class="row ">
+
+    <div class="col-6 ">
+      <div class="text-center">
+        <h4> Booking you've received </h4> <p class="badge-pill badge-primary">Received</p>
       </div>
-    <% end %>
-  <% end %>
+      <% current_user.animals.each do |animal| %>
+        <% animal.bookings.each do |booking|%>
+         <% if current_user.id == booking.user.id %>
+            <div class="row">
+              <div class="col-lg info-cards p-1 m-3">
+                <P> You have received a booking for <strong class="title-info"><%= animal.name.capitalize%></strong> made by <strong class="title-info"><%= booking.user.first_name  %></strong> </p>      
+                <p><span class="badge-pill badge-warning">Pending</span></p>
+                <% if booking.end_date < DateTime.now %>
+                  <p><span class="badge-pill badge-warning">Done</span></p>
+                <% else %>
+                  <p><span class="badge-pill badge-success">To come</span></p>
+                <% end %>
+                <p><strong> Dates : </strong> <%= booking.start_date %> 👉 <%= booking.end_date %></p>
+                
+                <a href="#"><h2 class="far fa-check-circle"></h2></a>
+                <a href="#"><h2 class="far fa-times-circle"></h2></a>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="col-6 border-left border-dark">
+      <div class="text-center">
+        <h4> Booking you've made </h4> <p class="badge-pill badge-info">Made</p>
+      </div> 
+      <% current_user.animals.each do |animal| %>
+        <% animal.bookings.each do |booking|%>
+          <% if current_user.id != booking.user.id %>
+            <div class="row">
+              <div class="col-lg info-cards p-1 m-3">
+                <p> You have made a booking for <strong class="title-info"><%= booking.animal.name%>,</strong> a lovely <%= animal.animal_type %> owned by <strong class="title-info"><%= animal.user.first_name %></strong> </p>      
+                <p><span class="badge-pill badge-success">Accepted</span></p>
+                <p><strong> Dates : </strong> <%= booking.start_date %> 👉 <%= booking.end_date %></p>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+
+  </div>
+  
 </div>
