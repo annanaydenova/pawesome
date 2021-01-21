@@ -2,52 +2,37 @@
   height: max-content;
   width: 100%;
   background-image: url("paws-wallpaper.jpg");
-  .background-white {
-    background-color: rgba(255, 255, 255, 0.7);
-    .display-flex-center {
-      position: relative;
-      z-index: 2;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      img {
-        margin: 20px 0px;
-      }
-      .animal-description {
-        text-align: left;
-        background-color: white;
-        width: 400px;
-        margin-bottom: 10px;
-        padding-left: 10px;
-        padding-top: 10px;
-        box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
-
-      }
-      .animal-type {
-        text-align: left;
-        background-color: white;
-        width: 400px;
-        margin-bottom: 10px;
-        padding-left: 10px;
-        padding-top: 10px;
-        box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
-
-      }
-      .animal-address {
-        text-align: left;
-        background-color: white;
-        width: 400px;
-        margin-bottom: 20px;
-        padding-left: 10px;
-        padding-top: 10px;
-        box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
-
-      }
-      .animal-actions {
-        text-align: center;
-      }
-    }
-  }
 }
 
+.show-container {
+  width:  80%;
+  margin: auto;
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.show-container-left {
+  flex-grow: 1;
+}
+
+.show-title {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom:   20px;
+}
+
+.animal-content{
+  display: flex;
+  width: 700px;
+  padding-bottom: 20px;
+}
+
+.animal-description{
+  text-align: left;
+  background-color: white;
+  width: 600px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  padding-top: 10px;
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
+}

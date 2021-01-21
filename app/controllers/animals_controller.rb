@@ -8,12 +8,22 @@ class AnimalsController < ApplicationController
     else
       @animals = Animal.all
     end
+    @markers = @animals.geocoded.map do |animal|
+      {
+        lat: animal.latitude,
+        lng: animal.longitude
+      }
+    end
   end
 
 
   def show
     # @animal = Animal.find(params[:id])
     @booking = Booking.new
+    @markers = [{
+      lat: @animal.latitude,
+      lng: @animal.longitude
+    }]
   end
 
   def new
