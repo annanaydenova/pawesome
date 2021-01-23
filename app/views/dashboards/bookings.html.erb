@@ -31,7 +31,7 @@
             <div class="row">
               <div class="col-lg info-cards p-1 m-3">
                 <P> You have received a booking for <strong class="title-info"><%= animal.name.capitalize%></strong> made by <strong class="title-info"><%= booking.user.first_name  %></strong> </p>
-
+                  <%= booking.id %>
                 <% if booking.status.nil? %>
                   <p><span class="badge-pill badge-warning">Pending</span></p>
                 <% elsif booking.status == "accepted" %>
@@ -50,7 +50,7 @@
                 <% if booking.status.nil? %>
 
                   <%= link_to booking_path(booking, status: "accepted"), method: :patch do %>
-                    <button class="btn-flat">Accept</button>
+                    <button class="btn-flat" id="accept">Accept</button>
                   <% end %>
                   <%= link_to booking_path(booking, status: "rejected"), method: :patch do %>
                     <button class="btn-flat">Reject</button>
@@ -62,8 +62,8 @@
                   <% end %>
 
                 <% else %>
-                  <%= link_to booking_path(booking, status: "accepted"), method: :patch do %>
-                    <button class="btn-flat">Accept</button>
+                  <%= link_to booking_path(booking, status: "accepted"),method: :patch do %>
+                    <button class="btn-flat" id="accept">Accept</button>
                   <% end %>
 
                 <% end %>

@@ -20,7 +20,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.status = params[:status]
     @booking.save
-    redirect_to dashboard_bookings_path
+    # redirect_to dashboard_bookings_path
   end
 
   def destroy
