@@ -1,10 +1,12 @@
 <!-- <div class="paws-wallpaper"> -->
   <div class="show-container">
     <div class="show-container-left">
+
       <div class="show-title">
         <h1>Meet <%= @animal.name %>, your future buddy</h1>
       <%= link_to "Back to other buddies", animals_path, class: "btn btn-show" %>
       </div>
+
       <div class="animal-content">
         <% if @animal.photo.attached? %>
           <%= cl_image_tag @animal.photo.key, height: 500, width: 600, crop: :fill, :radius=>5 %>
@@ -12,41 +14,50 @@
           <img src="https://source.unsplash.com/500x400/?animals">
         <% end %>
       </div>
+
       <div class="animal-description" >
         <p><strong>Description</strong></p>
         <p><%= @animal.description %></p>
       </div>
+
       <div class="animal-description">
         <p><strong>Animal</strong></p>
         <p><%= @animal.animal_type %></p>
       </div>
+
       <div class="animal-description">
         <p><strong>Address</strong></p>
         <p><%= @animal.address %></p>
       </div>
-    <div class="animal-actions">
-      <%= link_to edit_animal_path(@animal.id), class: 'btn btn-default' do %>
-      <i class="fas fa-edit"></i>
-     <% end %>
-     <%= link_to animal_path(@animal.id), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-default' do %>
-     <i class="fas fa-trash-alt"></i>
-     <% end %>
+      
+      <% if current_user.id == @animal.user.id %>
+        <div class="animal-actions">
+          <%= link_to edit_animal_path(@animal.id), class: 'btn btn-default' do %>
+          <i class="fas fa-edit"></i>
+         <% end %>
+         <%= link_to animal_path(@animal.id), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-default' do %>
+         <i class="fas fa-trash-alt"></i>
+         <% end %>
+      <% end %>
+      
     </div>
-    </div>
-      <div class="animal-calendar">
-        <div class="row justify-content-center">
-          <div class="col-md-8">
-            <h4>Book <%= @animal.name.capitalize %> here</h4>
-            <%= simple_form_for [@animal, @booking] do |f| %>
-              <%= f.input :start_date, as: :string, required: true, input_html: {class: "datepicker"} %>
-              <%= f.input :end_date, as: :string, required: true, input_html: {class: "datepicker"} %>
-              <%= f.button :submit, "Book your buddy", class: 'btn-flat' %>
-            <% end %>
+
+      <% if current_user.id != @animal.user.id %>
+        <div class="animal-calendar">
+          <div class="row justify-content-center">
+            <div class="col-md-8">
+              <h4>Book <%= @animal.name.capitalize %> here</h4>
+              <%= simple_form_for [@animal, @booking] do |f| %>
+                <%= f.input :start_date, as: :string, required: true, input_html: {class: "datepicker"} %>
+                <%= f.input :end_date, as: :string, required: true, input_html: {class: "datepicker"} %>
+                <%= f.button :submit, "Book your buddy", class: 'btn-flat' %>
+              <% end %>
+            </div>
           </div>
         </div>
-      </div>
+      <% end %>
+
 </div>
-<!-- </div> -->
 
 
 

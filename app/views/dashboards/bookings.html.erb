@@ -28,7 +28,6 @@
       </div>
       <% current_user.animals.each do |animal| %>
         <% animal.bookings.each do |booking|%>
-         <% if current_user.id == booking.user.id %>
             <div class="row">
               <div class="col-lg info-cards p-1 m-3">
                 <P> You have received a booking for <strong class="title-info"><%= animal.name.capitalize%></strong> made by <strong class="title-info"><%= booking.user.first_name  %></strong> </p>      
@@ -71,7 +70,6 @@
                 
               </div>
             </div>
-          <% end %>
         <% end %>
       <% end %>
     </div>
@@ -82,7 +80,7 @@
       </div> 
       <% @animals.each do |animal| %>
         <% animal.bookings.each do |booking|%>
-          <% if current_user.id !== booking.user.id %>
+          <% if current_user.id != booking.user.id %>
             <div class="row">
               <div class="col-lg info-cards p-1 m-3">
                 <p> You have made a booking for <strong class="title-info"><%= booking.animal.name%>,</strong> a lovely <%= animal.animal_type %> owned by <strong class="title-info"><%= animal.user.first_name %></strong> </p>      
