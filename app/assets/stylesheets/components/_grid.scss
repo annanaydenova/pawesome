@@ -40,7 +40,7 @@
 /*Medium devices (tablets, 768px and up)*/
 @media (min-width: 1200px) {
   .cards {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
   #map {
     display: block;
@@ -50,7 +50,7 @@
 .test-card {
   background-size: cover;
   background-position: center;
-  height: 150px;
+  height: 300px;
   border-radius: 1px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   display: flex;
@@ -89,7 +89,7 @@
     background-color: white;
     box-shadow:       1px 1px 3px rgba(0,0,0,0.2);
     padding:          10px;
-    margin:           20px;
+    // margin:           20px;
     border-radius:    5px;
     color:            #666666;
 }
