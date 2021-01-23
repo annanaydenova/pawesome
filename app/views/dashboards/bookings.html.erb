@@ -30,7 +30,7 @@
         <% animal.bookings.each do |booking|%>
             <div class="row">
               <div class="col-lg info-cards p-1 m-3">
-              
+
                 <h5> You have received a booking for <strong class="title-info"><%= animal.name.capitalize%></strong> made by <strong class="title-info"><%= booking.user.first_name  %></strong> </h5>      
                 <div class="container">
                   
@@ -82,13 +82,14 @@
     <div class="col-6 border-left border-dark">
       <div class="text-center">
         <h4> Booking you've made </h4> <p class="badge-pill badge-info">Made</p>
-      </div> 
-  
+      </div>
+
       <% @animals.each do |animal| %>
         <% animal.bookings.each do |booking|%>
           <% if current_user.id == booking.user.id %>
             <div class="row">
               <div class="col-lg info-cards p-1 m-3">
+
                 <h5> You have made a booking for <strong class="title-info"><%= booking.animal.name%>,</strong> a lovely <%= animal.animal_type %> owned by <strong class="title-info"><%= animal.user.first_name %></strong> </h5>      
                 <div class="container">
 
@@ -108,8 +109,9 @@
                   </div>
 
                 </div>
-
+                
                   <%= link_to booking_path(booking), method: :delete do %>
+
                     <button class=" btn btn-flat mb-2">Cancel</button>
                   <% end %>              
               </div>
@@ -120,5 +122,5 @@
     </div>
 
   </div>
-  
+
 </div>

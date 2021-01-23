@@ -37,6 +37,7 @@ import { datePickr } from '../plugins/flatpickr';
 import { loadDynamicBannerText } from '../components/banner';
 import { initMapbox } from '../plugins/init_mapbox';
 import { sweetAlertOnBooking } from '../components/sweetalert';
+import { sweetAlertOnAccept } from '../components/accept';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -46,4 +47,5 @@ document.addEventListener('turbolinks:load', () => {
   loadDynamicBannerText();
   initMapbox();
   sweetAlertOnBooking();
+  sweetAlertOnAccept();
 });
