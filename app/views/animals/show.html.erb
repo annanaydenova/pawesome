@@ -13,15 +13,15 @@
         <% end %>
       </div>
       <div class="animal-description" >
-        <p><strong>Description</strong></p>
+        <p><i class="fas fa-paw"></i> <strong>Description</strong></p>
         <p><%= @animal.description %></p>
       </div>
       <div class="animal-description">
-        <p><strong>Animal</strong></p>
+        <p><i class="fas fa-heart"></i> <strong>Animal</strong></p>
         <p><%= @animal.animal_type %></p>
       </div>
       <div class="animal-description">
-        <p><strong>Address</strong></p>
+        <p><i class="fas fa-map-marker-alt"></i> <strong>Address</strong></p>
         <p><%= @animal.address %></p>
       </div>
     <div class="animal-actions">
@@ -40,7 +40,7 @@
             <%= simple_form_for [@animal, @booking] do |f| %>
               <%= f.input :start_date, as: :string, required: true, input_html: {class: "datepicker"} %>
               <%= f.input :end_date, as: :string, required: true, input_html: {class: "datepicker"} %>
-              <%= f.button :submit, "Book your buddy", class: 'btn-flat' %>
+              <%= f.button :submit, "Book your buddy", class: 'btn-flat', id: 'booking-button' %>
             <% end %>
           </div>
         </div>
