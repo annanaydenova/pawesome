@@ -1,13 +1,13 @@
-<!-- <div class="paws-wallpaper"> -->
-  <div class="show-container mb-2">
-    <div class="show-container-left">
+<div class="show-container p-5">
+  <div class="show-container-left">
+    <div class="card-around">
 
       <div class="show-title">
         <h1>Meet <strong class="title-info"><%= @animal.name %></strong>, your future buddy</h1>
-      <%= link_to "Back to other buddies", animals_path, class: "btn btn-show" %>
+      <%= link_to "Back to other buddies", animals_path, class: "btn btn-show mr-4" %>
       </div>
 
-      <div class="animal-content">
+      <div class="animal-content mt-3">
         <% if @animal.photo.attached? %>
           <%= cl_image_tag @animal.photo.key, height: 500, width: 600, crop: :fill, :radius=>5 %>
         <% else %>
@@ -41,6 +41,7 @@
       <% end %>
 
     </div>
+
       <% if current_user.id != @animal.user.id %>
         <div class="animal-calendar">
           <div class="row justify-content-center">
@@ -55,7 +56,7 @@
           </div>
         </div>
       <% end %>
-
+  </div>
 </div>
 
 
