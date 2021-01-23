@@ -24,6 +24,11 @@ require("channels")
 
 // External imports
 import "bootstrap";
+// import Swal from 'sweetalert2';
+import Swal from 'sweetalert2/dist/sweetalert2.js'
+
+import 'sweetalert2/src/sweetalert2.scss'
+
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -31,6 +36,7 @@ import { initAutocomplete } from '../plugins/init_autocomplete';
 import { datePickr } from '../plugins/flatpickr';
 import { loadDynamicBannerText } from '../components/banner';
 import { initMapbox } from '../plugins/init_mapbox';
+import { sweetAlertOnBooking } from '../components/sweetalert';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
@@ -39,4 +45,5 @@ document.addEventListener('turbolinks:load', () => {
   initAutocomplete();
   loadDynamicBannerText();
   initMapbox();
+  sweetAlertOnBooking();
 });

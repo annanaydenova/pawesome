@@ -6,13 +6,17 @@
     <%= csp_meta_tag %>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <%= favicon_link_tag asset_path('paw.png') %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
   </head>
 
   <body>
     <%= render 'shared/navbar' %>
+    <%= render 'shared/flashes' %>
     <div class="main">
       <%= yield %>
     </div>
