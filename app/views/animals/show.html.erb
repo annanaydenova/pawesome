@@ -29,7 +29,7 @@
         <p><i class="fas fa-map-marker-alt"></i> <strong>Address</strong></p>
         <p><%= @animal.address %></p>
       </div>
-      
+
       <% if current_user.id == @animal.user.id %>
         <div class="animal-actions">
           <%= link_to edit_animal_path(@animal.id), class: 'btn btn-default' do %>
@@ -39,7 +39,7 @@
          <i class="fas fa-trash-alt"></i>
          <% end %>
       <% end %>
-      
+
     </div>
       <% if current_user.id != @animal.user.id %>
         <div class="animal-calendar">
@@ -49,7 +49,7 @@
               <%= simple_form_for [@animal, @booking] do |f| %>
                 <%= f.input :start_date, as: :string, required: true, input_html: {class: "datepicker"} %>
                 <%= f.input :end_date, as: :string, required: true, input_html: {class: "datepicker"} %>
-                <%= f.button :submit, "Book your buddy", class: 'btn-flat' %>
+                <%= f.button :submit, "Book your buddy", class: 'btn-flat', id: 'booking-button' %>
               <% end %>
             </div>
           </div>
