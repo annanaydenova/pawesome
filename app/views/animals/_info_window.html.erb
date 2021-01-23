@@ -4,7 +4,7 @@
          <% background_url = 'https://source.unsplash.com/500x400/?animal' %>
        <% end %>
         <%= link_to animal_path(animal) do %>
-            <div class="test-card" style="background-image: url('<%= background_url %>');">
+            <div class="map-card" style="background-image: url('<%= background_url %>');">
                 <h4><%= link_to animal.name.capitalize, animal_path(animal) %></h4>
             </div>
         <% end %>
