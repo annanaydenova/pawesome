@@ -37,6 +37,7 @@ gem 'cloudinary', '~> 1.16.0'
 gem 'faker'
 gem 'searchkick', '~> 4.0'
 gem 'geocoder'
+gem 'turbolinks_render'
 
 group :development, :test do
   gem 'pry-byebug'

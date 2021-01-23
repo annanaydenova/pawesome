@@ -24,22 +24,22 @@
 
     <div class="col-6 ">
       <div class="text-center">
-        <h4> Booking you've received </h4> <p class="badge-pill badge-primary">Received</p>
+        <p class="badge-pill badge-primary">Bookings you've received</p>
       </div>
       <% current_user.animals.each do |animal| %>
         <% animal.bookings.each do |booking|%>
             <div class="row">
               <div class="col-lg info-cards p-1 m-3">
 
-                <h5> You have received a booking for <strong class="title-info"><%= animal.name.capitalize%></strong> made by <strong class="title-info"><%= booking.user.first_name  %></strong> </h5>      
+                <h5> You have received a booking for <strong class="title-info"><%= animal.name.capitalize%></strong> made by <strong class="title-info"><%= booking.user.first_name  %></strong> </h5>
                 <div class="container">
-                  
+
                   <div class="row">
                     <p class ="mt-1"><strong> Dates : </strong> <%= booking.start_date %> 👉 <%= booking.end_date %></p>
                   </div>
 
                   <div class="row">
-                    <strong> Booking Status : </strong>  
+                    <strong> Booking Status : </strong>
                     <% if booking.status.nil? %>
                       <p><span class="badge-pill badge-warning m-1">Pending</span></p>
                     <% elsif booking.status == "accepted" %>
@@ -50,29 +50,28 @@
                   </div>
 
                 </div>
-                  
+
 
                   <% if booking.status.nil? %>
-  
                     <%= link_to booking_path(booking, status: "accepted"), method: :patch do %>
-                      <button class="btn btn-flat">Accept</button>
+                      <button class="btn btn-flat accept" id="<%= booking.id %> "> Accept</button>
                     <% end %>
                     <%= link_to booking_path(booking, status: "rejected"), method: :patch do %>
-                      <button class="btn btn-flat">Reject</button>
+                      <button class="btn btn-flat refuse" id="<%= booking.id %> ">Reject</button>
                     <% end %>
-  
+
                   <% elsif booking.status == "accepted" %>
                     <%= link_to booking_path(booking, status: "rejected"), method: :patch do %>
-                      <button class="btn btn-flat">Reject</button>
+                      <button class="btn btn-flat refuse" id="<%= booking.id %> ">Reject</button>
                     <% end %>
-                    
+
                   <% else %>
                     <%= link_to booking_path(booking, status: "accepted"), method: :patch do %>
-                      <button class="btn btn-flat mb-2">Accept</button>
+                      <button class="btn btn-flat mb-2 accept" id="<%= booking.id %> ">Accept</button>
                     <% end %>
-  
+
                   <% end %>
-                
+
               </div>
             </div>
         <% end %>
@@ -81,7 +80,7 @@
 
     <div class="col-6 border-left border-dark">
       <div class="text-center">
-        <h4> Booking you've made </h4> <p class="badge-pill badge-info">Made</p>
+        <p class="badge-pill badge-info">Bookings you've made</p>
       </div>
 
       <% @animals.each do |animal| %>
@@ -90,7 +89,7 @@
             <div class="row">
               <div class="col-lg info-cards p-1 m-3">
 
-                <h5> You have made a booking for <strong class="title-info"><%= booking.animal.name%>,</strong> a lovely <%= animal.animal_type %> owned by <strong class="title-info"><%= animal.user.first_name %></strong> </h5>      
+                <h5> You have made a booking for <strong class="title-info"><%= booking.animal.name%>,</strong> a lovely <%= animal.animal_type %> owned by <strong class="title-info"><%= animal.user.first_name %></strong> </h5>
                 <div class="container">
 
                   <div class="row">
@@ -98,7 +97,7 @@
                   </div>
 
                   <div class="row">
-                    <strong> Booking Status : </strong>  
+                    <strong> Booking Status : </strong>
                     <% if booking.status.nil? %>
                       <p><span class="badge-pill badge-warning m-1">Pending</span></p>
                     <% elsif booking.status == "accepted" %>
@@ -109,11 +108,11 @@
                   </div>
 
                 </div>
-                
-                  <%= link_to booking_path(booking), method: :delete do %>
 
-                    <button class=" btn btn-flat mb-2">Cancel</button>
-                  <% end %>              
+                  <%= link_to booking_path(booking), remote: true, method: :delete do %>
+
+                    <button class=" btn btn-flat mb-2" id="cancel">Cancel</button>
+                  <% end %>
               </div>
             </div>
           <% end %>
