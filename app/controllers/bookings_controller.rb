@@ -9,7 +9,7 @@ class BookingsController < ApplicationController
     @start_date = params[:booking][:start_date]
     @end_date = params[:booking][:end_date]
     @booking = Booking.new(animal: @animal, start_date: @start_date, end_date: @end_date, user_id: current_user.id)
-    if @booking.save!
+    if @booking.save
       # redirect_to dashboard_path
     else
       render :new

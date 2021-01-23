@@ -89,3 +89,19 @@
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
 }
+
+  .nav-btn {
+    color: white;
+    padding: 2x;
+    border-radius: 4px;
+    background: pink;
+    transition: background 0.3s ease;
+    margin-top: auto;
+    margin-right: 8px;
+  }
+  
+  .nav-btn:hover {
+    background: white;
+    color: pink;
+  }
+
