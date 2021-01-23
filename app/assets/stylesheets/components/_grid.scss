@@ -61,10 +61,13 @@
   font-weight: bolder;
   text-shadow: 0 0 10px rgba(0,0,0,0.7);
   border-radius: 5px;
+  text-decoration: none;
 }
+
 .test-card:hover{
     animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
-    transform: translate3d(0, 0, 0)
+    transform: translate3d(0, 0, 0);
+    text-decoration: none;
   }
 
   @keyframes shake {
