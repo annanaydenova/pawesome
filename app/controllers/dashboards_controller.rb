@@ -10,7 +10,7 @@ class DashboardsController < ApplicationController
 
   def bookings
     @booking = Booking.all
-    @user = User.all
+    @users = User.all
     @animals = Animal.all
   end
 end
