@@ -31,7 +31,16 @@
           </div>
         </li>
       <% else %>
+        <li class="nav-item active">
+          <%= link_to "Home", root_path, class: "nav-link" %>
+        </li>
         <li class="nav-item">
+          <%= link_to "Discover all buddies", animals_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item nav-btn">
+          <%= link_to "Signup", new_user_registration_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item nav-btn">
           <%= link_to "Login", new_user_session_path, class: "nav-link" %>
         </li>
       <% end %>
