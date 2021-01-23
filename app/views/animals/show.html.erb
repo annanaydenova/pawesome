@@ -4,7 +4,7 @@
 
       <div class="show-title">
         <h1>Meet <strong class="title-info"><%= @animal.name %></strong>, your future buddy</h1>
-      <%= link_to "Back to other buddies", animals_path, class: "btn btn-show mr-4" %>
+      <%= link_to "Back to other buddies", animals_path, class: "btn btn-show" %>
       </div>
 
       <div class="animal-content mt-3">
@@ -39,9 +39,10 @@
          <i class="fas fa-trash-alt"></i>
          <% end %>
       <% end %>
-
     </div>
 
+  </div>
+   <div class="card-around ml-1">
       <% if current_user.id != @animal.user.id %>
         <div class="animal-calendar">
           <div class="row justify-content-center">
@@ -56,7 +57,7 @@
           </div>
         </div>
       <% end %>
-  </div>
+    </div>
 </div>
 
 
