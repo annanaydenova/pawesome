@@ -18,19 +18,22 @@
 .show-title {
   display: flex;
   justify-content: space-between;
-  margin: 20px;
+  margin-top: 4px;
+  margin-bottom: 4px;
 }
 
 .animal-content{
   display: flex;
-  width: 700px;
+  width: 600px;
   padding-bottom: 20px;
+  margin-top: 2px; 
+  margin-bottom: 2px;
 }
 
 .animal-description{
   text-align: left;
   background-color: rgb(250, 240, 241);
-  width: 600px;
+  width: 500px;
   margin-bottom: 10px;
   padding-left: 10px;
   padding-top: 10px;
