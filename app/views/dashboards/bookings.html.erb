@@ -110,7 +110,8 @@
                 </div>
 
                   <%= link_to booking_path(booking), remote: true, method: :delete do %>
-                    <button class=" btn btn-flat mb-2" id="cancel">Cancel</button>
+
+                    <button class="btn btn-flat mb-2 cancel" id="<%= booking.id %>">Cancel</button>
                   <% end %>
               </div>
             </div>
