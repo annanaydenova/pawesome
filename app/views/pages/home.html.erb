@@ -22,19 +22,29 @@
 </div>
 
 
- <div class="container-equal-margin">
+ <div class="container-equal-margin home">
+  <h1>Why use Pawesome?</h1>
   <div class="row">
     <div class="col">
-      Lorem ipsum dolor sit amet, consectetur adipisicing, elit. Sed suscipit, nemo corrupti vero quibusdam minima aliquid, blanditiis voluptas ratione cupiditate quia sint distinctio, dolore voluptatum asperiores adipisci fuga odit! Sit!
+      <h2><i class="fas fa-heart"></i> Share the love</h2>
+      <p>
+        Our members sign up to share their love for animals and make other people happy
+      </p>
     </div>
     <div class="col">
-      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque voluptas nesciunt veritatis voluptates tempora reiciendis iste aut eos. Asperiores quam totam quasi sed obcaecati, optio, temporibus laborum quidem sequi illo?
+      <h2><i class="fas fa-paw"></i> Community</h2>
+      <p>
+        Join like minded people in your local area who are part of the largest animal-loving community
+      </p>
     </div>
     <div class="col">
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nisi veritatis adipisci voluptates illum dicta hic quam architecto reiciendis delectus tempora non dolor velit asperiores assumenda, id, cumque voluptatibus suscipit ea.
+      <h2><i class="fas fa-check-square"></i> Safety</h2>
+      <p>
+        At Pawesome we take animal safety very seriously. Pawesome membership includes insurance
+      </p>
     </div>
   </div>
-  <div class="row align-items justify-content-center">
+  <div style="margin-top: 30px" class="row align-items justify-content-center">
     <% @animals.each do |animal| %>
       <div class="col-12 col-md-6 col-lg-4">
         <% if animal.photo.attached? %>
@@ -51,8 +61,8 @@
         <% end %>
       </div>
     <% end %>
-    <div style="margin-bottom: 10px">
-     <%= link_to "Discover all our pets", animals_path, class: "btn btn-flat" %>
+    <div style="margin-bottom: 30px; margin-top: 30px">
+     <%= link_to "Discover all our buddies", animals_path, class: "btn btn-flat" %>
     </div>
   </div>
 </div>

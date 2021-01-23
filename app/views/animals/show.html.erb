@@ -16,17 +16,17 @@
       </div>
 
       <div class="animal-description" >
-        <p><strong>Description</strong></p>
+        <p><i class="fas fa-paw"></i> <strong>Description</strong></p>
         <p><%= @animal.description %></p>
       </div>
 
       <div class="animal-description">
-        <p><strong>Animal</strong></p>
+        <p><i class="fas fa-heart"></i> <strong>Animal</strong></p>
         <p><%= @animal.animal_type %></p>
       </div>
 
       <div class="animal-description">
-        <p><strong>Address</strong></p>
+        <p><i class="fas fa-map-marker-alt"></i> <strong>Address</strong></p>
         <p><%= @animal.address %></p>
       </div>
       
@@ -41,7 +41,6 @@
       <% end %>
       
     </div>
-
       <% if current_user.id != @animal.user.id %>
         <div class="animal-calendar">
           <div class="row justify-content-center">
