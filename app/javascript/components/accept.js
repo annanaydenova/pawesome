@@ -39,10 +39,11 @@ const sweetAlertOnRefuse = () => {
 };
 
 const sweetAlertOnCancel = () => {
-  const AlertBtn = document.getElementById('cancel');
+  const AlertBtn = document.querySelector('.cancel');
   if (AlertBtn) {
     AlertBtn.addEventListener('click', (event)=>{
-      const Redirect = '<a href="../dashboard/bookings" style="color: white"><i class="fas fa-paw"></i> So sad</a>'
+      const id = event.currentTarget.id
+      const Redirect = '<a href="../dashboard/bookings#${id}" style="color: white"><i class="fas fa-paw"></i> So sad</a>'
       Swal.fire({
         title: "Booking cancelled!",
         text: "You're going to be so lonely!",
