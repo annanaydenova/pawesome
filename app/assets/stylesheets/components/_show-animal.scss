@@ -29,10 +29,18 @@
 
 .animal-description{
   text-align: left;
-  background-color: white;
+  background-color: rgb(250, 240, 241);
   width: 600px;
   margin-bottom: 10px;
   padding-left: 10px;
   padding-top: 10px;
   box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.animal-calendar {
+  height:   50vh;
+  width: 300px;
+  position: sticky;
+  top:      25%;
+  right:    10%;
 }

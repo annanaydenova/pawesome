@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  # def home
-  # before_action :authenticate_user!
-  # end
+  def home
+    @animals = Animal.first(6)
+  end
 end
